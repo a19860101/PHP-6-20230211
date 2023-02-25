@@ -48,12 +48,15 @@
             <label for="">不透漏</label>
         </div>
         <div>
+            <?php 
+                $skill = explode(',',$student['skill']);
+            ?>
             <label for="">專長</label>
-            <input type="checkbox" name="skill[]" value="平面設計">
+            <input type="checkbox" name="skill[]" value="平面設計" <?php echo in_array('平面設計',$skill)?'checked':'';?>>
             <label for="">平面設計</label>
-            <input type="checkbox" name="skill[]" value="網頁">
+            <input type="checkbox" name="skill[]" value="網頁" <?php echo in_array('網頁',$skill)?'checked':'';?>>
             <label for="">網頁</label>
-            <input type="checkbox" name="skill[]" value="影片剪輯">
+            <input type="checkbox" name="skill[]" value="影片剪輯" <?php echo in_array('影片剪輯',$skill)?'checked':'';?>>
             <label for="">影片剪輯</label>
         </div>
         <input type="submit" value="更新">
