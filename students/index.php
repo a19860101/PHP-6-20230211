@@ -23,6 +23,9 @@
     </style>
 </head>
 <body>
+    <div>
+        <a href="create.php">新增資料</a>
+    </div>
     <table>
         <tr>
             <th>ID</th>
