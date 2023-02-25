@@ -28,6 +28,11 @@
             <li>性別:<?php echo $student['gender'];?></li>
             <li>專長:<?php echo $student['skill'];?></li>
         </ul>
+        <form action="delete.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $student['id'];?>">
+            <input type="submit" value="刪除">
+        </form>
+
         <!-- <a href="index.php">回上頁</a> -->
         <a href="#" onclick="history.back()">回上頁</a>
     </div>
