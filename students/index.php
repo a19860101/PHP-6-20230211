@@ -1,6 +1,7 @@
 <?php
     include('db.php');
-    $sql = 'SELECT * FROM students';
+    $sql = 'SELECT * FROM students ORDER BY id DESC';
+    //  遞增 ASC, 遞減 DESC
     $students = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($students);
 ?>
