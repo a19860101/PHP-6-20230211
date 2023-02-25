@@ -1,7 +1,10 @@
 <?php
     include("db.php");
     extract($_REQUEST);
-    echo $id;
+    $sql = 'SELECT * FROM students WHERE id = ?';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
+    $student = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,33 +18,33 @@
 <form action="" method="post">
         <div>
             <label for="">姓名</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php echo $student['name'];?>">
         </div>
         <div>
             <label for="">電話</label>
-            <input type="text" name="phone">
+            <input type="text" name="phone" value="<?php echo $student['phone'];?>">
         </div>
         <div>
             <label for="">Email</label>
-            <input type="text" name="email" >
+            <input type="text" name="email" value="<?php echo $student['email'];?>" >
         </div>
         <div>
             <label for="">學歷</label>
             <select name="edu" id="">
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
-                <option value="研究所以上">研究所以上</option>
+                <option value="國小" <?php echo $student['edu']=='國小'?'selected':'';?>>國小</option>
+                <option value="國中 <?php echo $student['edu']=='國中'?'selected':'';?>">國中</option>
+                <option value="高中職" <?php echo $student['edu']=='高中職'?'selected':'';?>>高中職</option>
+                <option value="大專院校" <?php echo $student['edu']=='大專院校'?'selected':'';?>>大專院校</option>
+                <option value="研究所以上" <?php echo $student['edu']=='研究所以上'?'selected':'';?>>研究所以上</option>
             </select>
         </div>
         <div>
             <label for="">性別</label>
-            <input type="radio" name="gender" value="男">
+            <input type="radio" name="gender" value="男" <?php echo $student['gender']=='男'?'checked':'';?>>
             <label for="">男</label>
-            <input type="radio" name="gender" value="女">
+            <input type="radio" name="gender" value="女" <?php echo $student['gender']=='女'?'checked':'';?>>
             <label for="">女</label>
-            <input type="radio" name="gender" value="不透漏">
+            <input type="radio" name="gender" value="不透漏" <?php echo $student['gender']=='不透漏'?'checked':'';?>>
             <label for="">不透漏</label>
         </div>
         <div>
