@@ -1,8 +1,8 @@
 <?php
     include('db.php');
     $sql = 'SELECT * FROM students';
-    $students = $pdo->query($sql)->fetchAll();
-    var_dump($students);
+    $students = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($students);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php foreach($students as $student){ ?>
+        <div><?php echo $student['name'];?></div>
+    <?php } ?>
 </body>
 </html>
