@@ -37,7 +37,7 @@
             <td><?php echo $student['id'];?></td>
             <td><?php echo $student['name'];?></td>
             <td><?php echo $student['phone'];?></td>
-            <td><a href="#">詳細資料</a></td>
+            <td><a href="show.php?id=<?php echo $student['id'];?>">詳細資料</a></td>
         </tr>
         <?php } ?>
     </table>
