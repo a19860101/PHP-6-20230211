@@ -21,12 +21,15 @@
 <body>
     <div>
         <ul>
-            <li><?php echo $student['name'];?></li>
-            <li><?php echo $student['phone'];?></li>
-            <li><?php echo $student['email'];?></li>
-            <li><?php echo $student['edu'];?></li>
-            <li><?php echo $student['gender'];?></li>
+            <li>姓名:<?php echo $student['name'];?></li>
+            <li>電話:<?php echo $student['phone'];?></li>
+            <li>Email:<?php echo $student['email'];?></li>
+            <li>學歷:<?php echo $student['edu'];?></li>
+            <li>性別:<?php echo $student['gender'];?></li>
+            <li>專長:<?php echo $student['skill'];?></li>
         </ul>
+        <!-- <a href="index.php">回上頁</a> -->
+        <a href="#" onclick="history.back()">回上頁</a>
     </div>
 </body>
 </html>

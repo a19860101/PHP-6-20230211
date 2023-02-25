@@ -49,6 +49,7 @@
             <label for="">影片剪輯</label>
         </div>
         <input type="submit" value="新增資料">
+        <input type="button" value="取消" onclick="history.back()" >
     </form>
 </body>
 </html>
