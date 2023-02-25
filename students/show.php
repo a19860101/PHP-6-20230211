@@ -28,6 +28,7 @@
             <li>性別:<?php echo $student['gender'];?></li>
             <li>專長:<?php echo $student['skill'];?></li>
         </ul>
+        <a href="edit.php?id=<?php echo $student['id'];?>">編輯</a>
         <form action="delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $student['id'];?>">
             <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
