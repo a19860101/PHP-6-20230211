@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="update.php" method="post">
         <div>
             <label for="">姓名</label>
             <input type="text" name="name" value="<?php echo $student['name'];?>">
@@ -59,6 +59,7 @@
             <input type="checkbox" name="skill[]" value="影片剪輯" <?php echo in_array('影片剪輯',$skill)?'checked':'';?>>
             <label for="">影片剪輯</label>
         </div>
+        <input type="hidden" name="id" value="<?php echo $student['id'];?>">
         <input type="submit" value="更新">
         <input type="button" value="取消" onclick="history.back()" >
     </form>

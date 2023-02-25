@@ -34,8 +34,8 @@
             <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
         </form>
 
-        <!-- <a href="index.php">回上頁</a> -->
-        <a href="#" onclick="history.back()">回上頁</a>
+        <a href="index.php">學員列表</a>
+        <!-- <a href="#" onclick="history.back()">回上頁</a> -->
     </div>
 </body>
 </html>
