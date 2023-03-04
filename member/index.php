@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include('function.php');
+    $users = index();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,5 +46,14 @@
             <?php } ?>
         </div>
     </nav>
+    <table>
+        <?php foreach($users as $user){ ?>
+            <tr>
+                <td><?php echo $user['name'];?></td>
+                <td><?php echo $user['email'];?></td>
+                <td><?php echo $user['created_at'];?></td>
+            </tr>
+        <?php } ?>
+    </table>
 </body>
 </html>
