@@ -1,14 +1,6 @@
 <?php
-    include('db.php');
-    extract($_REQUEST);
-    $sql = "SELECT * FROM students WHERE id = {$id}";
-    // $student = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-
-    $sql = 'SELECT * FROM students WHERE id = ?';
-    // 預備陳述式 prepare statement
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$id]);
-    $student = $stmt->fetch(PDO::FETCH_ASSOC);
+    include('function.php');
+    $student = show($_REQUEST);
 ?>
 <!DOCTYPE html>
 <html lang="en">

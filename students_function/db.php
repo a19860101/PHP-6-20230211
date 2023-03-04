@@ -5,7 +5,6 @@ function pdo(){
     $db_pw = 'admin';
     $db_name = 'php-6-20230211';
     $db_charset = 'utf8mb4';
-
     
     // data source name
     $dsn = "mysql:host={$db_host};dbname={$db_name};charset={$db_charset}";
@@ -19,3 +18,4 @@ function pdo(){
     }
     return $pdo;
 }
+
