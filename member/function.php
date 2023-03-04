@@ -64,8 +64,9 @@
     }
     function index(){
         $sql = 'SELECT * FROM users';
-        $stmt = pdo()->prepare($sql);
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // $stmt = pdo()->prepare($sql);
+        // $stmt->execute();
+        // $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $users = pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
