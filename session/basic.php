@@ -1,6 +1,10 @@
 <?php
     // 伺服器暫存檔
     session_start();
+    if(isset($_REQUEST['destroy'])){
+        session_destroy();
+        header('location:basic.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +20,17 @@
         <input type="submit" value="新增session">
     </form>
     <div>
+        <?php if(isset($_SESSION['DATA'])){ ?>
         您的SESSION為 <?php echo $_SESSION['DATA'];?>
+        <?php }else{ ?>
+        目前無SESSION
+        <?php }?>
     </div>
+    <form action="#" method="post">
+        <input type="submit" value="清除SESSION" name="destroy">
+    </form>
+    <?php
+        
+    ?>
 </body>
 </html>
