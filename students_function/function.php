@@ -15,3 +15,10 @@
         $student = $stmt->fetch(PDO::FETCH_ASSOC);
         return $student;
     }
+    function store($request){
+        extract($request);
+        $sql = 'INSERT INTO students(name,phone,email,edu,gender,skill)VALUES(?,?,?,?,?,?)';
+        $stmt = pdo()->prepare($sql);
+        $skill = implode(',',$skill);
+        $stmt->execute([$name,$phone,$email,$edu,$gender,$skill]);
+    }
