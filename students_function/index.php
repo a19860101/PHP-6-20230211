@@ -1,6 +1,12 @@
 <?php
     include('function.php');
     $students = index();
+    // print_r($students);
+    if(isset($students['errCode'])){
+        echo $students['errMsg'];
+        return;
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

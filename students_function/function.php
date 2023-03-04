@@ -2,10 +2,19 @@
     include('db.php');
     function index(){
         // $pdo = pdo();
-        $sql = 'SELECT * FROM students ORDER BY id DESC';
+        $sql = 'SELECT * FROM students1 ORDER BY id DESC';
         // $students = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        $students = pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        return $students;
+        try{
+            $students = pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+            return $students;
+        }catch(PDOException $e){
+            // echo $e->getMessage();
+            // print_r($e);
+            return [
+                'errCode'=>$e->getCode(),
+                'errMsg'=>$e->getMessage()
+            ];
+        }
     }
     function show($request){
         extract($request);
