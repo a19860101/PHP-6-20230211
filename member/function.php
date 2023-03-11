@@ -70,3 +70,14 @@
         $users = pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
+    function switchRole($request){
+        extract($request);
+        if($role == 0){
+            $role = 1;
+        }else{
+            $role = 0;
+        }
+        $sql = 'UPDATE users SET role = ? WHERE id = ?';
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$role,$id]);
+    }

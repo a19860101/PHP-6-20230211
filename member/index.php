@@ -62,6 +62,7 @@
             <th>Email</th>
             <th>建立日期</th>
             <th>權限</th>
+            <th>切換權限</th>
         </tr>
         <?php foreach($users as $user){ ?>
             <tr>
@@ -72,6 +73,13 @@
                     <?php 
                         echo $user['role']==0?'一般會員':'管理員';
                     ?>
+                </td>
+                <td>
+                    <form action="switchRole.php" method="post">
+                        <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
+                        <input type="hidden" value="<?php echo $user['role']; ?>" name="role">
+                        <input type="submit" value="切換權限">
+                    </form>
                 </td>
             </tr>
         <?php } ?>
