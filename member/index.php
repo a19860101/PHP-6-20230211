@@ -29,6 +29,16 @@
         .menu {
             margin-left: auto;
         }
+        table {
+            width: 600px;
+        }
+        table,td,th {
+            border: 1px solid #999;
+            
+        }
+        td,th {
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,11 +57,22 @@
         </div>
     </nav>
     <table>
+        <tr>
+            <th>名稱</th>
+            <th>Email</th>
+            <th>建立日期</th>
+            <th>權限</th>
+        </tr>
         <?php foreach($users as $user){ ?>
             <tr>
                 <td><?php echo $user['name'];?></td>
                 <td><?php echo $user['email'];?></td>
                 <td><?php echo $user['created_at'];?></td>
+                <td>
+                    <?php 
+                        echo $user['role']==0?'一般會員':'管理員';
+                    ?>
+                </td>
             </tr>
         <?php } ?>
     </table>
