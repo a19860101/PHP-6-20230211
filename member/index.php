@@ -74,6 +74,7 @@
                         echo $user['role']==0?'一般會員':'管理員';
                     ?>
                 </td>
+                <?php if(isset($_SESSION['AUTH']) && $_SESSION['AUTH']['role'] == 1){ ?>
                 <td>
                     <form action="switchRole.php" method="post">
                         <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
@@ -81,6 +82,7 @@
                         <input type="submit" value="切換權限">
                     </form>
                 </td>
+                <?php } ?>
             </tr>
         <?php } ?>
     </table>
