@@ -1,7 +1,8 @@
 <?php 
-    if(isset($_REQUEST['del'])){
-        unlink($_REQUEST['img']);
-    }
+   include('db.php');
+   $sql = 'SELECT * FROM galleries';
+   $imgs = pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+   $img_nums = count($imgs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,18 +19,15 @@
         <input type="submit" value="上傳">
     </form>
     <div>
-        <?php 
-            $imgs = glob('images/*');
-            // var_dump($imgs);
-            $img_nums = count($imgs);
-            
-        ?>
         <div><?php echo "目前共{$img_nums}張圖";?> </div>
         <?php  foreach($imgs as $img){ ?>
         <div>
-            <img src="<?php echo $img;?>" alt="" width="150">
+            <figure>
+                <img src="images/<?php echo $img['img_name'];?>" alt="" width="150">
+                <figcaption><?php echo $img['title'];?></figcaption>
+            </figure>
             <form action="" method="post">
-                <input type="hidden" name="img" value="<?php echo $img;?>">
+                <input type="hidden" name="img" value="<?php echo $img['img_name'];?>">
                 <input type="submit" value="刪除圖片" name="del" onclick="return confirm('確認刪除?')">
             </form>
         </div>
