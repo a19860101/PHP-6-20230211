@@ -7,11 +7,13 @@
     $ext = pathinfo($name,PATHINFO_EXTENSION);
     $fullname = $img_name.'.'.$ext;
 
-    echo $fullname;
-    
+    $folder = 'images/';
 
+    if(!is_dir($folder)){
+        mkdir($folder);
+    }
 
-    $target = 'images/'.$fullname;
+    $target = $folder.$fullname;
 
 
     if($error == 0){
