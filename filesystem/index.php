@@ -1,3 +1,8 @@
+<?php 
+    if(isset($_REQUEST['del'])){
+        unlink($_REQUEST['img']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +29,7 @@
             <img src="<?php echo $img;?>" alt="" width="150">
             <form action="" method="post">
                 <input type="hidden" name="img" value="<?php echo $img;?>">
-                <input type="submit" value="刪除圖片" onclick="return confirm('確認刪除?')">
+                <input type="submit" value="刪除圖片" name="del" onclick="return confirm('確認刪除?')">
             </form>
         </div>
         <?php } ?>
