@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <form action="" method="post">
+            <form action="store.php" method="post">
                 <div class="mb-3">
                     <label for="" class="form-label">分類標題</label>
                     <input type="text" name="title" class="form-control">
