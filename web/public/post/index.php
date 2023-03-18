@@ -19,7 +19,7 @@
                     <small class="text-muted"><?php echo $post['created_at']; ?></small>
                 </div>
 
-                <a href="#" class="btn btn-primary">繼續閱讀</a>
+                <a href="show.php?id=<?php echo $post['id'];?>" class="btn btn-primary">繼續閱讀</a>
             </div>
         </div>
         <?php } ?>
