@@ -22,4 +22,12 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$title,$body,$category_id,DB::now()]);
         }
+        static function edit($request){
+            extract($request);
+            $sql = 'SELECT * FROM posts WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+            $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $data;
+        }
     }
