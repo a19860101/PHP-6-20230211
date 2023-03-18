@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <h2>新增文章</h2>
-            <form action="">
+            <form action="store.php" method="post">
                 <div class="mb-3">
                     <label for="" class="form-label">文章標題</label>
                     <input type="text" class="form-control" name="title">
