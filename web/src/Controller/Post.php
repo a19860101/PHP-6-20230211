@@ -1,6 +1,6 @@
 <?php
     namespace Gjun\Web\Controller;
-    use PDO;
+    // use PDO;
     use Gjun\Web\Config\DB;
     class Post {
         static function store($request){

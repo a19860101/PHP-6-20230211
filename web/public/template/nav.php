@@ -13,6 +13,9 @@
                     <a class="nav-link active" aria-current="page" href="<?php echo $webroot;?>">首頁</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot;?>/post/index.php">文章列表</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo "{$webroot}/post/create.php"?>">新增文章</a>
                 </li>
                 <li class="nav-item">
