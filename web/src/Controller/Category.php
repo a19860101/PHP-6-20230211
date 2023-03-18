@@ -15,5 +15,10 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$title]);
         }
-        static function delete(){}
+        static function delete($request){
+            extract($request);
+            $sql = 'DELETE FROM category WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+        }
     }
