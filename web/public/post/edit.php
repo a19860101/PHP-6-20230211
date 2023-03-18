@@ -27,6 +27,7 @@
                     <textarea name="body" id="body" cols="30" rows="10" class="form-control"><?php echo $post['body'];?></textarea>
                 </div>
                 <input type="submit" value="更新" class="btn btn-primary">
+                <input type="hidden" value="<?php echo $post['id'];?>" name="id">
                 <input type="button" value="取消" class="btn btn-danger" onclick="history.back()">
             </form>
         </div>
