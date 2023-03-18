@@ -1,7 +1,9 @@
 <?php
     include('../vendor/autoload.php');
-    $test = new Gjun\Web\Test\Show;
-    echo $test->walk();
+    use Gjun\Web\Config\DB;
+    // $db = new Gjun\Web\Config\DB;
+    $db = new DB;
+    echo $db->now();
 ?>
 <!DOCTYPE html>
 <html lang="en">
