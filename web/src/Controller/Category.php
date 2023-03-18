@@ -4,7 +4,11 @@
     use Gjun\Web\Config\DB;
 
     class Category{
-        static function index(){}
+        static function index(){
+            $sql = 'SELECT * FROM category';
+            $data = DB::pdo()->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+            return $data; 
+        }
         static function store($request){
             extract($request);
             $sql = 'INSERT INTO category(title)VALUES(?)';
