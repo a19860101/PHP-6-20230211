@@ -1,3 +1,8 @@
+<?php
+    include('../../vendor/autoload.php');
+    use Gjun\Web\Controller\Category;
+    $categories = Category::index();
+?>
 <?php include('../template/header.php'); ?>
 <?php include('../template/nav.php'); ?>
 <div class="container">
@@ -12,10 +17,9 @@
                 <div class="mb-3">
                     <label for="" class="form-label">文章分類</label>
                     <select name="category_id" id="category_id" class="form-select">
-                        <option value="1">科技</option>
-                        <option value="2">政治</option>
-                        <option value="3">休閒</option>
-                        <option value="4">體育</option>
+                        <?php foreach($categories as $category){ ?>
+                        <option value="<?php echo $category['id'];?>"><?php echo $category['title'];?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="mb-3">
