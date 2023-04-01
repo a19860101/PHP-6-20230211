@@ -9,7 +9,11 @@
     <div class="col-12 py-3">
             <div class="border p-4 rounded">
                 <small class="text-muted"><?php echo $post['category_title']; ?></small>
-                <h3 class="mb-1"><?php echo $post['title']; ?></h3>
+                <h3><?php echo $post['title']; ?></h3>
+                <small class="text-muted">
+                    <?php echo $post['name']; ?>
+                    [<?php echo $post['email']; ?>]
+                </small>
                 <div class="my-4">
                     <?php echo $post['body']; ?>
                 </div>

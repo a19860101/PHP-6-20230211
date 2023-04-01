@@ -4,16 +4,18 @@
     use Gjun\Web\Config\DB;
     class Post {
         static function index(){
-            $sql = 'SELECT posts.*,category.title AS category_title FROM posts 
+            $sql = 'SELECT posts.*,users.name,users.email,category.title AS category_title FROM posts 
                     LEFT JOIN category ON posts.category_id = category.id 
+                    LEFT JOIN users ON posts.user_id = users.id
                     ORDER BY id DESC';
             $data = DB::pdo()->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
             return $data;
         }
         static function show($request){
             extract($request);
-            $sql = 'SELECT posts.*,category.title AS category_title FROM posts 
+            $sql = 'SELECT posts.*,users.name,users.email,category.title AS category_title FROM posts 
                     LEFT JOIN category ON posts.category_id = category.id 
+                    LEFT JOIN users ON posts.user_id = users.id
                     WHERE posts.id = ?';
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$id]);
