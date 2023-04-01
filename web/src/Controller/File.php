@@ -48,4 +48,11 @@
 
             }
         }
+        static function delete($request){
+            extract($request);
+            unlink('images/'.$img);
+            $sql = 'DELETE FROM galleries WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+        }
     }

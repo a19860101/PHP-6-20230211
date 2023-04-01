@@ -35,8 +35,10 @@
                     <td><?php echo $g['img_name'];?></td>
                     <td><?php echo $g['created_at'];?></td>
                     <td>
-                        <form action="">
-                            <input type="submit" value="刪除" class="btn btn-danger btn-sm">
+                        <form action="delete.php" method="post">
+                            <input type="hidden" value="<?php echo $g['id'];?>" name="id">
+                            <input type="hidden" value="<?php echo $g['img_name'];?>" name="img">
+                            <input type="submit" value="刪除" class="btn btn-danger btn-sm" onclick="return confirm('確認刪除？')">
                         </form>
                     </td>
                 </tr>
