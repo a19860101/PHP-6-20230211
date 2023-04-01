@@ -36,5 +36,11 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$title, $body,$category_id,DB::now(),$id]);
         }
+        static function delete($request){
+            extract($request);
+            $sql = 'DELETE FROM posts WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+        }
 
     }

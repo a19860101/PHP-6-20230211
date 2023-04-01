@@ -18,6 +18,10 @@
                 </div>
                 <a href="index.php" class="btn btn-primary">文章列表</a>
                 <a href="edit.php?id=<?php echo $post['id'];?>" class="btn btn-success">編輯</a>
+                <form action="delete.php" method="post" class="d-inline-block">
+                    <input type="hidden" value="<?php echo $post['id']; ?>" name="id">
+                    <input type="submit" value="刪除" class="btn btn-danger">
+                </form>
             </div>
         </div>
     </div>
