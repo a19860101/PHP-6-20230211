@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-6 m-auto">
             <h2>會員註冊</h2>
-            <form action="">
+            <form action="store.php" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">名稱</label>
                     <input type="text" class="form-control" name="name">
