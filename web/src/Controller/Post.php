@@ -50,5 +50,15 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$id]);
         }
+        static function new_post(){
+            $sql = 'SELECT posts.*,users.name,users.email,category.title AS category_title FROM posts 
+                    LEFT JOIN category ON posts.category_id = category.id 
+                    LEFT JOIN users ON posts.user_id = users.id
+                    ORDER BY created_at DESC
+                    LIMIT 3'
+                    ;
+            $data = DB::pdo()->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+            return $data;
+        }
 
     }
