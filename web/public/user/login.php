@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-6 m-auto">
             <h2>會員登入</h2>
-            <form action="">
+            <form action="auth.php" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" name="email">

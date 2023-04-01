@@ -1,6 +1,6 @@
 <?php
     namespace Gjun\Web\Controller;
-    // use PDO;
+    use PDO;
     use Gjun\Web\Config\DB;
     class User {
         static function store($request){
@@ -38,11 +38,11 @@
                 return 0;
             }
         }
-        function auth($request){
+        static function auth($request){
             session_start();
             extract($request);
             $sql = 'SELECT * FROM users WHERE email = ?';
-            $stmt = pdo()->prepare($sql);
+            $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$email]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             if(!$user){
