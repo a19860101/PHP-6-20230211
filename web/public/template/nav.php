@@ -19,12 +19,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot;?>/post/index.php">文章列表</a>
                 </li>
+                <?php if(isset($_SESSION['AUTH'])){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo "{$webroot}/post/create.php"?>">新增文章</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo "{$webroot}/category/index.php"?>">分類管理</a>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>
                 </li>

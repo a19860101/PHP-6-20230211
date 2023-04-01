@@ -21,11 +21,13 @@
                     <small class="text-muted"><?php echo $post['created_at']; ?></small>
                 </div>
                 <a href="index.php" class="btn btn-primary">文章列表</a>
+                <?php if(isset($_SESSION['AUTH']) && $_SESSION['AUTH']['id'] == $post['user_id']){?>
                 <a href="edit.php?id=<?php echo $post['id'];?>" class="btn btn-success">編輯</a>
                 <form action="delete.php" method="post" class="d-inline-block">
                     <input type="hidden" value="<?php echo $post['id']; ?>" name="id">
                     <input type="submit" value="刪除" class="btn btn-danger">
                 </form>
+                <?php } ?>
             </div>
         </div>
     </div>
