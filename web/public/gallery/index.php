@@ -1,3 +1,7 @@
+<?php
+    include('../../vendor/autoload.php');
+    $galleries = Gjun\Web\Controller\File::index();
+?>
 <?php include('../template/header.php'); ?>
 <?php include('../template/nav.php'); ?>
 <div class="container">
@@ -14,6 +18,30 @@
                 </div>
                 <input type="submit" value="上傳" class="btn btn-primary">
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <tr>
+                    <th>名稱</th>
+                    <th>檔名</th>
+                    <th>上傳時間</th>
+                    <th>動作</th>
+                </tr>
+                <?php foreach($galleries as $g){ ?>
+                <tr>
+                    <td><?php echo $g['title'];?></td>
+                    <td><?php echo $g['img_name'];?></td>
+                    <td><?php echo $g['created_at'];?></td>
+                    <td>
+                        <form action="">
+                            <input type="submit" value="刪除" class="btn btn-danger btn-sm">
+                        </form>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
         </div>
     </div>
 </div>

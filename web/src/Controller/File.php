@@ -1,9 +1,14 @@
 <?php
     namespace Gjun\Web\Controller;
-
+    use PDO;
     use Gjun\Web\Config\DB;
 
     class File{
+        static function index(){
+            $sql = 'SELECT * FROM galleries ORDER BY created_at DESC';
+            $data = DB::pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+            return $data; 
+        }
         static function upload($request,$file){
             extract($request);
             extract($file);
