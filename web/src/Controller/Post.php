@@ -55,7 +55,7 @@
                     LEFT JOIN category ON posts.category_id = category.id 
                     LEFT JOIN users ON posts.user_id = users.id
                     ORDER BY created_at DESC
-                    LIMIT 3'
+                    LIMIT 4'
                     ;
             $data = DB::pdo()->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
             return $data;
