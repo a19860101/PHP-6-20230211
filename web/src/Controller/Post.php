@@ -21,10 +21,12 @@
             return $data;
         }
         static function store($request){
+            session_start();
             extract($request);
-            $sql = 'INSERT INTO posts(title,body,category_id,created_at)VALUES(?,?,?,?)';
+            $user_id = $_SESSION['AUTH']['id'];
+            $sql = 'INSERT INTO posts(title,body,user_id,category_id,created_at)VALUES(?,?,?,?,?)';
             $stmt = DB::pdo()->prepare($sql);
-            $stmt->execute([$title,$body,$category_id,DB::now()]);
+            $stmt->execute([$title,$body,$user_id,$category_id,DB::now()]);
         }
         static function edit($request){
             extract($request);
