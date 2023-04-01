@@ -26,10 +26,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo "{$webroot}/category/index.php"?>">分類管理</a>
                 </li>
-                <?php } ?>
                 <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link" href="<?php echo "{$webroot}/gallery/index.php"?>">作品管理</a>
                 </li>
+                <?php } ?>
+               
             </ul>
             <ul class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION['AUTH'])){ ?>
