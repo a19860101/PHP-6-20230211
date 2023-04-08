@@ -48,3 +48,11 @@ Route::post('/store',[ContactController::class,'store']);
 // Route::get('/about','AboutController@test');
 // Route::post('/store','ContactController@store');
 
+/*
+    執行migration: php artisan migrate
+    查看狀態: php artisan migrate:status
+    重置migration: php artisan migrate:reset
+    回上一步migration: php artisan migrate:rollback
+
+*/
+
