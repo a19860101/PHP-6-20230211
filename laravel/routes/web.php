@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about',function(){
-    return view('about');
+Route::get('/about/{id}',function($id){
+    // return view('about')->with(['aid' => $id]);
+    // return view('about',['aid' => $id]);
+    // return view('about',compact('id'));
+    // compact('id') = ['id' => $id]
+    // return $id;
+
+    return view('about')->with([
+        'msg' => '哈囉你好嗎!',
+        'id' => $id
+    ]);
 });

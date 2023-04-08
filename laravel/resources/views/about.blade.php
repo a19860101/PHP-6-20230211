@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ABOUT</h1>
+    <h1>ABOUT {{$id}}</h1>
+    <h2>{{$msg}}</h2>
 </body>
 </html>
