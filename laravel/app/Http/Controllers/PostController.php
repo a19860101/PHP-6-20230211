@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class PostController extends Controller
 {
     //
@@ -17,7 +17,16 @@ class PostController extends Controller
         return view('post.create');
     }
     public function store(Request $request){
-        return $request->all();
+        // DB::insert('INSERT INTO posts(title,content,created_at)VALUES(?,?,?)',[
+        //     $request->title,
+        //     $request->content,
+        //     now()
+        // ]);
+        DB::table('posts')->insert([
+            'title'     => $request->title,
+            'content'   => $request->content,
+            'created_at'=> now()
+        ]);
     }
     public function edit(){
         return 'edit';
