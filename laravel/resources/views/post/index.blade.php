@@ -9,5 +9,17 @@
 <body>
     <h1>POST LISTS</h1>
     <a href="/post/create">新增文章</a>
+
+    <div>
+        @foreach($data as $post)
+        <div>
+            <h2>{{$post->title}}</h2>
+            <small>建立時間{{$post->created_at}}</small>
+            <div>
+                {{$post->content}}
+            </div>
+        </div>
+        @endforeach
+    </div>
 </body>
 </html>

@@ -8,7 +8,9 @@ class PostController extends Controller
 {
     //
     public function index(){
-        return view('post.index');
+        // $data = DB::select('SELECT * FROM posts');
+        $data = DB::table('posts')->get();
+        return view('post.index',compact('data'));
     }
     public function show(){
         return 'show';
@@ -27,6 +29,8 @@ class PostController extends Controller
             'content'   => $request->content,
             'created_at'=> now()
         ]);
+
+        return redirect('/post');
     }
     public function edit(){
         return 'edit';
