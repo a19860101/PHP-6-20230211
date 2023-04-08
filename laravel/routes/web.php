@@ -18,6 +18,11 @@ use App\Http\Controllers\AboutController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/about/{id}',[AboutController::class,'test']);
+// Route::get('/about',[App\Http\Controllers\AboutController::class,'test']);
+
+//舊版寫法
+// Route::get('/about','AboutController@test');
 // Route::get('/about/{id}',function($id){
     // return view('about')->with(['aid' => $id]);
     // return view('about',['aid' => $id]);
@@ -29,8 +34,4 @@ Route::get('/', function () {
     //     'id' => $id
     // ]);
 // });
-Route::get('/about',[AboutController::class,'test']);
-Route::get('/about',[App\Http\Controllers\AboutController::class,'test']);
 
-//舊版寫法
-Route::get('/about','AboutController@test');
