@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>CREATE POST</h1>
-    <form action="">
+    <form action="/post" method="post">
+        @csrf
         <div>
             <label for="">標題</label>
             <input type="text" name="title">
