@@ -61,4 +61,5 @@ Route::get('/post/create',[App\Http\Controllers\PostController::class,'create'])
 Route::post('/post',[App\Http\Controllers\PostController::class,'store']);
 Route::get('/post/{id}',[App\Http\Controllers\PostController::class,'show']);
 Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit']);
+Route::delete('/post/{id}',[App\Http\Controllers\PostController::class,'destroy']);
 

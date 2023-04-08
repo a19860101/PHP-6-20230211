@@ -16,6 +16,11 @@
             {{$post->content}}
         </div>
         <a href="/post">返回</a>
+        <form action="/post/{{$post->id}}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
+        </form>
     </div>
 </body>
 </html>
