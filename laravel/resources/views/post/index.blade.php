@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>POST LISTS</h1>
+    <a href="/post/create">新增文章</a>
 </body>
 </html>
