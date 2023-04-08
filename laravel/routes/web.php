@@ -35,3 +35,7 @@ Route::get('/about/{id}',[AboutController::class,'test']);
     // ]);
 // });
 
+Route::get('/contact',function(){
+    return view('contact');
+});
+
