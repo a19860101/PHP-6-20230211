@@ -16,6 +16,7 @@
             {{$post->content}}
         </div>
         <a href="/post">返回</a>
+        <a href="/post/{{$post->id}}/edit">編輯</a>
         <form action="/post/{{$post->id}}" method="post">
             @csrf
             @method('delete')
