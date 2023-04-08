@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="store.php" method="post">
+    <form action="/store" method="post">
+        @csrf
+        {{ csrf_field() }}
         <div>
             <label for="">姓名</label>
             <input type="text" name="name">

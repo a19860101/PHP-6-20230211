@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AboutController;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,5 +37,8 @@ Route::get('/about/{id}',[AboutController::class,'test']);
 
 Route::get('/contact',function(){
     return view('contact');
+});
+Route::post('/store',function(Request $request){
+    return $request->name;
 });
 
