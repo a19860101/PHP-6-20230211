@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,15 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about/{id}',function($id){
+// Route::get('/about/{id}',function($id){
     // return view('about')->with(['aid' => $id]);
     // return view('about',['aid' => $id]);
     // return view('about',compact('id'));
     // compact('id') = ['id' => $id]
     // return $id;
+    // return view('about')->with([
+    //     'msg' => '哈囉你好嗎!',
+    //     'id' => $id
+    // ]);
+// });
+Route::get('/about',[AboutController::class,'test']);
+Route::get('/about',[App\Http\Controllers\AboutController::class,'test']);
 
-    return view('about')->with([
-        'msg' => '哈囉你好嗎!',
-        'id' => $id
-    ]);
-});
+//舊版寫法
+Route::get('/about','AboutController@test');
