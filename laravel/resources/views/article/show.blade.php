@@ -17,7 +17,7 @@
         </div>
         <a href="/article">返回</a>
         <a href="/article/{{$article->id}}/edit">編輯</a>
-        <form action="/article/{{$article->id}}" method="post">
+        <form action="{{route('article.destroy',$article->id)}}" method="post">
             @csrf
             @method('delete')
             <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
