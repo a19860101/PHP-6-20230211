@@ -19,7 +19,8 @@
             <div>
                 {{$article->content}}
             </div>
-            <a href="#">繼續閱讀</a>
+            {{-- <a href="{{route('article.show',['article'=>$article->id])}}">繼續閱讀</a> --}}
+            <a href="{{route('article.show',$article->id)}}">繼續閱讀</a>
         </div>
         @endforeach
     </div>
