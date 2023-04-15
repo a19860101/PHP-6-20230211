@@ -33,7 +33,9 @@
             </tr>
             @foreach($categories as $category)
             <tr>
-                <form action="">
+                <form action="{{route('category.update',$category->id)}}" method="post">
+                    @csrf
+                    @method('put')
                     <td>
                         {{$category->id}}
                     </td>
@@ -47,7 +49,9 @@
                         <input type="submit" value="更新">
                     </td>
                 </form>
-                <form action="">
+                <form action="{{route('category.destroy',$category->id)}}" method="post">
+                    @csrf
+                    @method('delete')
                     <td>
                         <input type="submit" value="刪除">
                     </td>
