@@ -16,7 +16,7 @@
             {{$article->content}}
         </div>
         <a href="/article">返回</a>
-        <a href="/article/{{$article->id}}/edit">編輯</a>
+        <a href="{{route('article.edit',$article->id)}}">編輯</a>
         <form action="{{route('article.destroy',$article->id)}}" method="post">
             @csrf
             @method('delete')
