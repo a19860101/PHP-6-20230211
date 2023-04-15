@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+// use App\Article;
 use Illuminate\Http\Request;
+
 
 class ArticleController extends Controller
 {
@@ -37,7 +39,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 方法一
+        $article = new Article;
+        $article->title = $request->title;
+        $article->content = $request->content;
+        $article->save();
+
     }
 
     /**

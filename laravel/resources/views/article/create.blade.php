@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>CREATE ARTICLE</h1>
-    <form action="/post" method="post">
+    <form action="{{route('article.store')}}" method="post">
         @csrf
         <div>
             <label for="">標題</label>
