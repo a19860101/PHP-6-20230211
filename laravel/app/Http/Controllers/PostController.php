@@ -39,8 +39,19 @@ class PostController extends Controller
         $post = DB::table('posts')->find($id);
         return view('post.edit',compact('post'));
     }
-    public function update($id){
-        return $id;
+    public function update(Request $request,$id){
+        // DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?',[
+        //     $request->title,
+        //     $request->content,
+        //     now(),
+        //     $id
+        // ]);
+        DB::table('posts')->where('id',$id)->update([
+            'title'     => $request->title,
+            'content'   => $request->content,
+            'created_at'=> now(),
+        ]);
+        return redirect('/post');
     }
     public function destroy($id){
         // DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
