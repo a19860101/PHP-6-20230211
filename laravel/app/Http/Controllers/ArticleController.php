@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 // use App\Article;
+use App\Models\Category;
+// use App\Category;
 use Illuminate\Http\Request;
 
 
@@ -30,7 +32,9 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('article.create');
+        // $categories = Category::get();
+        $categories = \App\Models\Category::get();
+        return view('article.create',compact('categories'));
     }
 
     /**
