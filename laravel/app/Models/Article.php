@@ -10,5 +10,5 @@ class Article extends Model
     use HasFactory;
 
     // 白名單
-    protected $fillable = ['title','content'];
+    protected $fillable = ['title','content','category_id'];
 }
