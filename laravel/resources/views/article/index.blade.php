@@ -11,6 +11,17 @@
         {{-- <a href="/article/create">新增文章</a> --}}
         <a href="{{route('article.create')}}">新增文章</a>
     </nav>
-
+    <div>
+        @foreach($articles as $article)
+        <div>
+            <h2>{{$article->title}}</h2>
+            <small>建立時間{{$article->created_at}}</small>
+            <div>
+                {{$article->content}}
+            </div>
+            <a href="#">繼續閱讀</a>
+        </div>
+        @endforeach
+    </div>
 </body>
 </html>
