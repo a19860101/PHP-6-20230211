@@ -67,3 +67,4 @@ Route::put('/post/{id}',[App\Http\Controllers\PostController::class,'update']);
 Route::resource('/article',App\Http\Controllers\ArticleController::class);
 // Route::resource('/article','ArticleController');
 
+Route::resource('/category',App\Http\Controllers\CategoryController::class);
