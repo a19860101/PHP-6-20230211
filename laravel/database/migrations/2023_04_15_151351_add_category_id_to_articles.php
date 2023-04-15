@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             //
-            $table->string('test');
+            $table->unsignedBigInteger('category_id')->after('title')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -28,7 +29,8 @@ return new class extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             //
-            $table->dropColumn('test');
+            $table->dropForeign(['category_id']);
+            $table->dropColumn('category_id');
         });
     }
 };
