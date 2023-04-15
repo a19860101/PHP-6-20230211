@@ -64,3 +64,6 @@ Route::delete('/post/{id}',[App\Http\Controllers\PostController::class,'destroy'
 Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit']);
 Route::put('/post/{id}',[App\Http\Controllers\PostController::class,'update']);
 
+Route::resource('/article',App\Http\Controllers\ArticleController::class);
+// Route::resource('/article','App\Http\Controllers\ArticleController');
+
