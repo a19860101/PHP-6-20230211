@@ -15,6 +15,7 @@
         @foreach($articles as $article)
         <div>
             <h2>{{$article->title}}</h2>
+            <div>分類:{{$article->category->title}}</div>
             <small>建立時間{{$article->created_at}}</small>
             <div>
                 {{$article->content}}

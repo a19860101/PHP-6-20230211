@@ -11,4 +11,8 @@ class Article extends Model
 
     // 白名單
     protected $fillable = ['title','content','category_id'];
+    public function category(){
+        return $this->belongsTo(Category::class);
+        // return $this->belongsTo(App\Category);
+    }
 }
