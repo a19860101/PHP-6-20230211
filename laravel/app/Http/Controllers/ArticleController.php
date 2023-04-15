@@ -54,9 +54,15 @@ class ArticleController extends Controller
         // $article->save();
 
         // 方法三
-        $article = new Article;
-        $article->fill($request->all());
-        $article->save();
+        // $article = new Article;
+        // $article->fill($request->all());
+        // $article->save();
+
+        // 方法四
+        Article::create($request->all());
+
+        // return redirect('/article');
+        return redirect()->route('article.index');
     }
 
     /**
