@@ -2,13 +2,23 @@
 @section('page-title')
 新增文章
 @endsection
+@section('css')
+    <style>
+        .is-error {
+            border-color: red;
+        }
+    </style>
+@endsection
 @section('main')
 <h1>CREATE ARTICLE</h1>
     <form action="{{route('article.store')}}" method="post">
         @csrf
         <div>
             <label for="">標題</label>
-            <input type="text" name="title">
+            <input type="text" name="title" class="@error('title') is-error @enderror">
+            @error('title')
+                {{$message}}
+            @enderror
         </div>
         <div>
             <label for="">分類</label>
@@ -20,7 +30,10 @@
         </div>
         <div>
             <label for="">內文</label>
-            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <textarea name="content" id="content" cols="30" rows="10" class="@error('content') is-error @enderror"></textarea>
+            @error('content')
+                {{$message}}
+            @enderror
         </div>
         <input type="submit" value="建立文章">
         <input type="button" value="取消" onclick="history.back()">
