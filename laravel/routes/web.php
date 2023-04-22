@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/article',App\Http\Controllers\ArticleController::class);
+Route::resource('/category',App\Http\Controllers\CategoryController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
