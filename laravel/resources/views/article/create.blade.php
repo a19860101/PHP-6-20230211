@@ -11,7 +11,7 @@
 @endsection
 @section('main')
 <h1>CREATE ARTICLE</h1>
-    <form action="{{route('article.store')}}" method="post">
+    <form action="{{route('article.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="">標題</label>
@@ -27,6 +27,10 @@
                 <option value="{{$category->id}}">{{$category->title}}</option>
                 @endforeach
             </select>
+        </div>
+        <div>
+            <label for="">封面</label>
+            <input type="file" name="cover">
         </div>
         <div>
             <label for="">內文</label>
