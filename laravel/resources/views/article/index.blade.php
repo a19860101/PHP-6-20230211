@@ -1,7 +1,6 @@
 @extends('template.master')
 @section('main')
 <div>
-    <h1>{{Auth::user()->name}}</h1>
     @foreach($articles as $article)
     <div>
         <h2>{{$article->title}}</h2>

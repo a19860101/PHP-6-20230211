@@ -8,6 +8,8 @@ use App\Models\Category;
 // use App\Category;
 use Illuminate\Http\Request;
 
+use Auth;
+
 
 class ArticleController extends Controller
 {
@@ -68,12 +70,14 @@ class ArticleController extends Controller
         // $article->save();
 
         // 方法三
-        // $article = new Article;
-        // $article->fill($request->all());
-        // $article->save();
+        $article = new Article;
+        $article->fill($request->all());
+        $article->user_id = Auth::id();
+
+        $article->save();
 
         // 方法四
-        Article::create($request->all());
+        // Article::create($request->all());
 
         // return redirect('/article');
         return redirect()->route('article.index');
