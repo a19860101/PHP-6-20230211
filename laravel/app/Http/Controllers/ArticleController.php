@@ -45,6 +45,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        // 驗證 validate
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+
         // 方法一
         // $article = new Article;
         // $article->title = $request->title;

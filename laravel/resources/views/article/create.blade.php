@@ -25,4 +25,11 @@
         <input type="submit" value="建立文章">
         <input type="button" value="取消" onclick="history.back()">
     </form>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+        <div>
+            {{$error}}
+        </div>
+        @endforeach
+    @endif
 @endsection
