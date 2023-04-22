@@ -9,6 +9,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 
 use Auth;
+use Str;
 
 
 class ArticleController extends Controller
@@ -49,7 +50,13 @@ class ArticleController extends Controller
     {
 
         // return $request->file('cover')->store('images','public');
-        return $request->file('cover')->storeAs('images','test','public');
+        // return $request->file('cover')->storeAs('images','test','public');
+
+        // return $request->file('cover')->getClientOriginalName();
+        // return $request->file('cover')->getClientOriginalExtension();
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        $cover = Str::uuid().'.'.$ext;
+        return $request->file('cover')->storeAs('images',$cover,'public');
 
         // 驗證 validate
 
