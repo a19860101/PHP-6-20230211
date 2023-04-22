@@ -3,6 +3,7 @@
 <div>
     @foreach($articles as $article)
     <div>
+        <img src="/images/{{$article->cover}}" alt="" width="200">
         <h2>{{$article->title}}</h2>
         <div>作者:{{$article->user->name}}</div>
         <div>分類:{{$article->category->title}}</div>

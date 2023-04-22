@@ -54,9 +54,9 @@ class ArticleController extends Controller
 
         // return $request->file('cover')->getClientOriginalName();
         // return $request->file('cover')->getClientOriginalExtension();
-        $ext = $request->file('cover')->getClientOriginalExtension();
-        $cover = Str::uuid().'.'.$ext;
-        return $request->file('cover')->storeAs('images',$cover,'public');
+        // $ext = $request->file('cover')->getClientOriginalExtension();
+        // $cover = Str::uuid().'.'.$ext;
+        // return $request->file('cover')->storeAs('images',$cover,'public');
 
         // 驗證 validate
 
@@ -81,9 +81,14 @@ class ArticleController extends Controller
         // $article->save();
 
         // 方法三
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        $cover = Str::uuid().'.'.$ext;
+        $request->file('cover')->storeAs('images',$cover,'public');
+
         $article = new Article;
         $article->fill($request->all());
         $article->user_id = Auth::id();
+        $article->cover = $cover;
 
         $article->save();
 
