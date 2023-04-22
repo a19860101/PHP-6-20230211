@@ -47,6 +47,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
+        // return $request->file('cover')->store('images','public');
+        return $request->file('cover')->storeAs('images','test','public');
+
         // 驗證 validate
 
         $request->validate([
