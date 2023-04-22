@@ -114,6 +114,13 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+        // 驗證 validate
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
         $article->fill($request->all());
         $article->save();
 
