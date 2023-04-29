@@ -166,4 +166,7 @@ class ArticleController extends Controller
         return redirect()->route('article.index');
 
     }
+    public function admin_article_index(){
+        return view('admin.article.index');
+    }
 }
