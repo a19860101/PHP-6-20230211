@@ -18,6 +18,17 @@
                 {{$message}}
             @enderror
         </div>
+        @php
+            $tagArray = [];
+            foreach($article->tags as $tag){
+                $tagArray[] = $tag->title;
+            }
+            $tagStr = implode(',',$tagArray);
+        @endphp
+        <div>
+            <label for="">標籤</label>
+            <input type="text" name="tag" value="{{$tagStr}}">
+        </div>
         <div>
             <label for="">分類</label>
             <select name="category_id" id="category_id">

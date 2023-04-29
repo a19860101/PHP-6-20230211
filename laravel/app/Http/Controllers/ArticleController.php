@@ -157,6 +157,13 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->save();
 
+        $article->tags()->detach();
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tagModel = Tag::firstOrCreate(['title' => $tag]);
+            $article->tags()->attach($tagModel->id);
+        }
+
         return redirect()->route('article.show',compact('article'));
     }
 
