@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::resource('/article',App\Http\Controllers\ArticleController::class);
 Route::resource('/category',App\Http\Controllers\CategoryController::class);
 Route::get('admin/article',[App\Http\Controllers\ArticleController::class,'admin_article_index'])->name('admin.article.index');
+Route::delete('admin/article/{article}',[App\Http\Controllers\ArticleController::class,'admin_article_destroy'])->name('admin.article.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

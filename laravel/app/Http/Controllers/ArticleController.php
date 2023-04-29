@@ -167,6 +167,12 @@ class ArticleController extends Controller
 
     }
     public function admin_article_index(){
-        return view('admin.article.index');
+        $articles = Article::orderBy('id','DESC')->get();
+        return view('admin.article.index',compact('articles'));
     }
+    public function admin_article_destroy(Article $article){
+        $article->delete();
+        return redirect()->route('admin.article.index');
+    }
+
 }
