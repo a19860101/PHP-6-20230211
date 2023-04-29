@@ -45,5 +45,32 @@
         @endforeach
     </table>
     <h2>已刪除文章</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>標題</th>
+            <th>分類</th>
+            <th>刪除時間</th>
+            <th>更新時間</th>
+            <th>動作</th>
+        </tr>
+        @foreach($trashes as $trash)
+        <tr>
+            <td>{{$trash->id}}</td>
+            <td>{{$trash->title}}</td>
+            <td>{{$trash->category->title}}</td>
+            <td>{{$trash->deleted_at}}</td>
+            <td>{{$trash->updated_at}}</td>
+            <td>
+                <form action="{{route('admin.article.destroy',$article->id)}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="強制刪除">
+                </form>
+                <a href="#">還原</a>
+            </td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>
