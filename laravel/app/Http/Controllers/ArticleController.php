@@ -50,11 +50,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
 
-        $tags = explode(',',$request->tag);
-        foreach($tags as $tag){
-            Tag::create(['title' => $tag]);
-        }
-        return;
+
         // return $request->file('cover')->store('images','public');
         // return $request->file('cover')->storeAs('images','test','public');
 
@@ -101,6 +97,12 @@ class ArticleController extends Controller
         $article->cover = $cover;
 
         $article->save();
+
+        //標籤
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            Tag::firstOrCreate(['title' => $tag]);
+        }
 
         // 方法四
         // Article::create($request->all());
