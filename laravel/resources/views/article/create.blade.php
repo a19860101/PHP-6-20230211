@@ -21,6 +21,10 @@
             @enderror
         </div>
         <div>
+            <label for="">標籤</label>
+            <input type="text" name="tag">
+        </div>
+        <div>
             <label for="">分類</label>
             <select name="category_id" id="category_id">
                 @foreach($categories as $category)

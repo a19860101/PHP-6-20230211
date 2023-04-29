@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 // use App\Article;
 use App\Models\Category;
+use App\Models\Tag;
 // use App\Category;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,11 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
 
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            Tag::create(['title' => $tag]);
+        }
+        return;
         // return $request->file('cover')->store('images','public');
         // return $request->file('cover')->storeAs('images','test','public');
 
