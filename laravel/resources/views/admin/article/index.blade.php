@@ -62,7 +62,7 @@
             <td>{{$trash->deleted_at}}</td>
             <td>{{$trash->updated_at}}</td>
             <td>
-                <form action="{{route('admin.article.destroy',$article->id)}}" method="post">
+                <form action="{{route('admin.article.forceDelete',$trash->id)}}" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" value="強制刪除">
