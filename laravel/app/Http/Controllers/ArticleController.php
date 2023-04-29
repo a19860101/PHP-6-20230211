@@ -178,5 +178,10 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('admin.article.index');
     }
+    public function admin_article_restore($id){
+        $article = Article::onlyTrashed()->find($id);
+        $article->restore();
+        return redirect()->route('admin.article.index');
+    }
 
 }

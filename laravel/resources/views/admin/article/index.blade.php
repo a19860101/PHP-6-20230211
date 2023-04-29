@@ -67,7 +67,7 @@
                     @method('delete')
                     <input type="submit" value="強制刪除">
                 </form>
-                <a href="#">還原</a>
+                <a href="{{route('admin.article.restore',$trash->id)}}">還原</a>
             </td>
         </tr>
         @endforeach
